@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
+import { useQuery } from "react-query";
 import Tool from './Tool';
 
 

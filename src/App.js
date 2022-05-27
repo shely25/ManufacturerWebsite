@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './Components/Homepage/Home';
 import { Route, Routes } from 'react-router-dom';
@@ -13,6 +12,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import RequireAuth from './Components/RequireAuth';
 import AddaReview from './Components/Dashboard/AddaReview';
 import MyOrders from './Components/Dashboard/MyOrders';
+import Footer from './Components/Footer';
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
           <Route path='MyOrders' element={<MyOrders></MyOrders>}></Route>
         </Route>
       </Routes>
+      <Footer></Footer>
       <ToastContainer />
     </div>
   );
