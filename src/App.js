@@ -13,6 +13,8 @@ import RequireAuth from './Components/RequireAuth';
 import AddaReview from './Components/Dashboard/AddaReview';
 import MyOrders from './Components/Dashboard/MyOrders';
 import Footer from './Components/Footer';
+import NotFound from './Components/NotFound';
+import Purchase from './Components/Purchase';
 
 function App() {
   return (
@@ -23,11 +25,13 @@ function App() {
         <Route path="/logIn" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
         <Route path="/Blogs" element={<Blogs />} />
+        <Route path="/tools/:id" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/Dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='AddaReview' element={<AddaReview></AddaReview>}></Route>
           <Route path='MyOrders' element={<MyOrders></MyOrders>}></Route>
         </Route>
+        <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer></Footer>
       <ToastContainer />
