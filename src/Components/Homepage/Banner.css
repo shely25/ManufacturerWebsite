@@ -1,5 +1,6 @@
 .banner {
     background-image: url("../../Images/banner.jpg");
+    background-repeat: no-repeat;
     height: 75vh;
     width: 100%;
 }
