@@ -18,6 +18,7 @@ import Purchase from './Components/Purchase';
 import Portfolio from './Components/Portfolio';
 import ManageAllOrders from './Components/Authentication/ManageAllOrders';
 import AddaProduct from './Components/Authentication/AddaProduct';
+import Users from './Components/Authentication/Users';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='MyOrders' element={<MyOrders></MyOrders>}></Route>
           <Route path="allorders" element={<ManageAllOrders />} />
           <Route path="addaproduct" element={<AddaProduct />} />
+          <Route path="users" element={<Users />} />
         </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
