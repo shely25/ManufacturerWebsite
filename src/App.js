@@ -16,6 +16,8 @@ import Footer from './Components/Footer';
 import NotFound from './Components/NotFound';
 import Purchase from './Components/Purchase';
 import Portfolio from './Components/Portfolio';
+import ManageAllOrders from './Components/Authentication/ManageAllOrders';
+import AddaProduct from './Components/Authentication/AddaProduct';
 
 function App() {
   return (
@@ -27,11 +29,14 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/Blogs" element={<Blogs />} />
         <Route path="/portfolio" element={<Portfolio />} />
+
         <Route path="/tools/:id" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/Dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='AddaReview' element={<AddaReview></AddaReview>}></Route>
           <Route path='MyOrders' element={<MyOrders></MyOrders>}></Route>
+          <Route path="allorders" element={<ManageAllOrders />} />
+          <Route path="addaproduct" element={<AddaProduct />} />
         </Route>
         <Route path="/*" element={<NotFound />} />
       </Routes>
