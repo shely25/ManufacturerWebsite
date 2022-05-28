@@ -15,23 +15,33 @@ const Purchase = () => {
             .then(data => setTool(data))
 
     }, [])
-    const { _id, Name, Description, Image, MinimumQuanrity, Available, price } = tool
+    const { _id, Name, Description, Image, Available, price } = tool
+    let { MinimumQuanrity } = tool
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch(`http://localhost:5000/orders`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-
+        if (parseInt(data.orderQuantity) < parseInt(MinimumQuanrity)) {
+            toast('You Can not order less then minimum quantity')
+        }
+        else if (parseInt(data.orderQuantity) > parseInt(Available)) {
+            toast('You can not order more than available quantity')
+        }
+        else {
+            fetch(`http://localhost:5000/orders`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
             })
-        reset()
-    };
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+
+                })
+            reset()
+        };
+    }
+
 
     const [user] = useAuthState(auth)
     return (
@@ -58,7 +68,7 @@ const Purchase = () => {
                     <br />
                     <input type="number" placeholder="Your Phone Number" className="input input-bordered  w-full max-w-xs mb-3 " {...register("number")} />
                     <br />
-                    <input type="number" placeholder="order quantity" className="input input-bordered  w-full max-w-xs mb-3 " {...register("orderQuantity")} value={MinimumQuanrity} />
+                    <input type="number" placeholder="order quantity" className="input input-bordered  w-full max-w-xs mb-3 " {...register("orderQuantity")} defaultValue={MinimumQuanrity} />
                     <br />
 
                     <input className='btn' type="submit" value="Place Order" />

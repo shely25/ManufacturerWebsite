@@ -5,8 +5,8 @@ const Information = () => {
     return (
         <div className='mt-16'>
             <div className="divider mb-16"></div>
-            <div class="card lg:card-side bg-base-100 shadow-xl px-16">
-                <div class="card-body">
+            <div class="card lg:card-side bg-base-100 px-16">
+                <div class="card-body w-1/2">
                     <h2 class="card-title">Need More Information?</h2>
                     <p>If you want to learn more about pricing, implementation, or anything else Commerce Cloud related, get in touch today. Our product experts are standing by and ready to help..</p>
                     <div class="card-actions justify-end">
