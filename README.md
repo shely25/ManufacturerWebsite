@@ -8,6 +8,10 @@
 * Email verification is added.
 * firebase hooks used.
 * React query is used.
+* React hook form is used.
+* tostify installed.
+* nested route used.
+* react authorization route is used.
 
 # Library
 * React.

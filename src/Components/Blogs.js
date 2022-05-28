@@ -18,7 +18,7 @@ const Blogs = () => {
             <div className='mt-5'>
                 <h1 className='text-2xl font-semibold'> You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h1>
                 <p>If we want to implement a search to find a product we can use
-                if (array.filter(evenet => event.name === 'name').length > 0) where array is the array name and name is the name which we want to find.
+                    if (array.filter(evenet aroow event.name === 'name').length greater than 0) where array is the array name and name is the name which we want to find.
                 </p>
             </div>
             <div className='mt-5'>
