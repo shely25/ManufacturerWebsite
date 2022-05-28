@@ -20,7 +20,9 @@ const Navber = () => {
                         <li>
                             <Link to='/blogs'>Blogs</Link>
                         </li>
-
+                        <li>
+                            <Link to='/portfolio'>Portfolio</Link>
+                        </li>
 
                         {
                             user ?
@@ -47,6 +49,7 @@ const Navber = () => {
                                         <Link to='/register'>Register</Link>
                                     </li>
                                 </>
+
                         }
 
 
@@ -58,6 +61,9 @@ const Navber = () => {
                 <ul class="menu menu-horizontal p-0">
                     <li>
                         <Link to='/blogs'>Blogs</Link>
+                    </li>
+                    <li>
+                        <Link to='/portfolio'>Portfolio</Link>
                     </li>
 
                     {

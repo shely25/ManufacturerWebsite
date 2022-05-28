@@ -15,6 +15,7 @@ import MyOrders from './Components/Dashboard/MyOrders';
 import Footer from './Components/Footer';
 import NotFound from './Components/NotFound';
 import Purchase from './Components/Purchase';
+import Portfolio from './Components/Portfolio';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/logIn" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
         <Route path="/Blogs" element={<Blogs />} />
+        <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/tools/:id" element={<RequireAuth><Purchase /></RequireAuth>} />
         <Route path="/Dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
           <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
