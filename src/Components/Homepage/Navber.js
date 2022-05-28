@@ -29,7 +29,7 @@ const Navber = () => {
                                         <Link to='/Dashboard'>DashBoard</Link>
                                     </li>
                                     <li>
-                                        <button className='border-0'>{user.displayName}</button>
+                                        <button className='border-0'>{user?.displayName}</button>
                                     </li>
                                     <li>
                                         <button className='border-0'>{user.email}</button>

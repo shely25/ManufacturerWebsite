@@ -9,7 +9,7 @@ const AddaReview = () => {
     const [user] = useAuthState(auth)
     const onSubmit = data => {
         console.log(data)
-        const review = { name: data.name, email: data.email, review: data.review }
+        const review = { name: data.name, email: data.email, review: data.review, ratting: data.rattings }
         fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
@@ -35,6 +35,8 @@ const AddaReview = () => {
                 <input type="email" placeholder="Your Email" className="input input-bordered  w-full max-w-xs mb-3 " {...register("email")} value={user?.email} />
                 <br />
                 <input type="text-area" placeholder="Add a Review" className="input input-bordered  w-full max-w-xs mb-3 " {...register("review")} />
+                <br />
+                <input type="number" placeholder="Give A rattings" className="input input-bordered  w-full max-w-xs mb-3 " {...register("rattings")} />
                 <br />
                 <input className='btn' type="submit" value="Add Review" />
             </form>
