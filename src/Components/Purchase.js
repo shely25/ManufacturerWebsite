@@ -18,7 +18,6 @@ const Purchase = () => {
     const { _id, Name, Description, Image, MinimumQuanrity, Available, price } = tool
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        console.log(data)
         fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
@@ -33,6 +32,7 @@ const Purchase = () => {
             })
         reset()
     };
+
     const [user] = useAuthState(auth)
     return (
         <div className='grid lg:grid-cols-2 mx-16 lg:px-16 my-16'>
@@ -58,7 +58,7 @@ const Purchase = () => {
                     <br />
                     <input type="number" placeholder="Your Phone Number" className="input input-bordered  w-full max-w-xs mb-3 " {...register("number")} />
                     <br />
-                    <input type="number" placeholder="Amount Order" className="input input-bordered  w-full max-w-xs mb-3 " {...register("amount")} />
+                    <input type="number" placeholder="order quantity" className="input input-bordered  w-full max-w-xs mb-3 " {...register("orderQuantity")} value={MinimumQuanrity} />
                     <br />
 
                     <input className='btn' type="submit" value="Place Order" />

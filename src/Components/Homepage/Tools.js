@@ -11,9 +11,9 @@ const Tools = () => {
         )
     }
     return (
-        <div>
+        <div className="mb-16">
             <h1 className='my-16 text-center text-4xl font-medium'>OUR AVAILABLE TOOLS</h1>
-            <div className='grid gap-8 mx-8 px-4 lg:grid-cols-3'>
+            <div className='grid gap-y-8 px-2 grid-cols-1 pl-16 pr-0 mr-0 lg:grid-cols-3'>
 
                 {
                     data.slice(0, 6).map(product => <Tool key={product._id} product={product}></Tool>)

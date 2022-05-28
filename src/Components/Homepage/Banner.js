@@ -1,14 +1,15 @@
 import React from 'react';
-import './Banner.css'
+import image from '../../Images/banner.jpg'
 
 const Banner = () => {
     return (
-        <div className='flex justify-center items-center banner'>
-            <div>
-                <h1 className='text-4xl font-semibold'>Welcome to our site.</h1>
-                <p className='text-2xl'>Here You can find your necessary electric tools for your Shop at a pikary rate.</p>
+        <div class="carousel w-full">
+            <div id="slide1" class="carousel-item relative w-full">
+                <img src={image} alt='' className="w-full h-96" ></img>
+                <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <p className='text-center font-medium text-2xl'>WLCOME TO OUR HOUSE.FIND YOUR NECCESARY PRODUCTS</p>
+                </div>
             </div>
-
         </div>
     );
 };

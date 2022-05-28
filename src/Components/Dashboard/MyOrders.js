@@ -24,6 +24,7 @@ const MyOrders = () => {
                     }
 
                 })
+            window.location.reload()
         }
     }
     return (
