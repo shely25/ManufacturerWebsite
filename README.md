@@ -17,13 +17,13 @@
 * React.
 
 # github link for client side
-[]
+[https://github.com/programming-hero-web-course1/manufacturer-website-client-side-shely25]
 
 # github Link for Server side
-[]
+[https://github.com/programming-hero-web-course1/manufacturer-website-server-side-shely25]
 
 # Heroku Link
-[]
+[https://limitless-island-02566.herokuapp.com/]
 
 # Client Side Live Link
 []

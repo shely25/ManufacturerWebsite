@@ -10,7 +10,7 @@ const AddaReview = () => {
     const onSubmit = data => {
         console.log(data)
         const review = { name: data.name, email: data.email, review: data.review, ratting: data.rattings }
-        fetch('http://localhost:5000/review', {
+        fetch('https://limitless-island-02566.herokuapp.com/review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ const Purchase = () => {
     const param = useParams()
     const [tool, setTool] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${param.id}`)
+        fetch(`https://limitless-island-02566.herokuapp.com/tools/${param.id}`)
             .then(res => res.json())
             .then(data => setTool(data))
 
@@ -26,7 +26,7 @@ const Purchase = () => {
             toast('You can not order more than available quantity')
         }
         else {
-            fetch(`http://localhost:5000/orders`, {
+            fetch(`https://limitless-island-02566.herokuapp.com/orders`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

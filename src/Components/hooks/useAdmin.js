@@ -8,7 +8,7 @@ function useAdmin() {
     let isAdmin = 0
 
     useEffect(() => {
-        fetch(`http://localhost:5000/profile/user?email=${user?.email}`)
+        fetch(`https://limitless-island-02566.herokuapp.com/profile/user?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setData(data))
     }, [])

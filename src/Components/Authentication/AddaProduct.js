@@ -6,7 +6,7 @@ const AddaProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/tools', {
+        fetch('https://limitless-island-02566.herokuapp.com/tools', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

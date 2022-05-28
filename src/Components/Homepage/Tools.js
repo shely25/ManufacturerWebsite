@@ -4,7 +4,7 @@ import Tool from './Tool';
 
 const Tools = () => {
     const { isLoading, error, data, isFetching } = useQuery("repoData", () =>
-        fetch("http://localhost:5000/tools").then((res) => res.json()));
+        fetch("https://limitless-island-02566.herokuapp.com/tools").then((res) => res.json()));
     if (isLoading) {
         return (
             <p>Loading...</p>
