@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../firebase.init';
 
 const Purchase = () => {
@@ -18,6 +19,18 @@ const Purchase = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         console.log(data)
+        fetch(`http://localhost:5000/orders`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+
+            })
         reset()
     };
     const [user] = useAuthState(auth)
@@ -39,11 +52,13 @@ const Purchase = () => {
                     <br />
                     <input type="email" placeholder="Your Email" className="input input-bordered  w-full max-w-xs mb-3 " {...register("email")} value={user?.email} />
                     <br />
+                    <input type="text" placeholder="Products Name" className="input input-bordered  w-full max-w-xs mb-3 " {...register("product")} value={Name} />
+                    <br />
                     <input type="text" placeholder="Your Address" className="input input-bordered  w-full max-w-xs mb-3 " {...register("address")} />
                     <br />
                     <input type="number" placeholder="Your Phone Number" className="input input-bordered  w-full max-w-xs mb-3 " {...register("number")} />
                     <br />
-                    <input type="number" placeholder="Amount Order" className="input input-bordered  w-full max-w-xs mb-3 " {...register("amount")} value={MinimumQuanrity} />
+                    <input type="number" placeholder="Amount Order" className="input input-bordered  w-full max-w-xs mb-3 " {...register("amount")} />
                     <br />
 
                     <input className='btn' type="submit" value="Place Order" />
